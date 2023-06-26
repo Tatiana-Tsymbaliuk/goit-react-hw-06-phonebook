@@ -3,7 +3,7 @@ import './ContactForm.css'
 import { useDispatch } from 'react-redux';
 import {addContact} from '../redux/taskSlice'
 
-export default function ContactForm({onSubmitForm}){
+export default function ContactForm(){
 
 const [name, setName] = useState("");
 const [number, setNumber] = useState("");
@@ -24,7 +24,7 @@ const handelChange = (e) =>{
 }
    const handelSubmitForm=(e)=>{
     e.preventDefault();
-    onSubmitForm({name, number});
+    //onSubmitForm({name, number});
     dispatch(addContact({name, number})) 
     setName("");
     setNumber("");

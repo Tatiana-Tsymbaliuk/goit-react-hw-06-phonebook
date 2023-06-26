@@ -5,7 +5,7 @@ import { filterContact } from 'components/redux/taskSlice';
 const Filter =()=>{
         const dispatch = useDispatch();
         const handelFilter = e =>{
-                dispatch(filterContact(e.target.value))
+                dispatch(filterContact(e.target.value));
         }
 return(
         <label className='filterData'>Find contacts by name
