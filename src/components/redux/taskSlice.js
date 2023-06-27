@@ -21,6 +21,7 @@ reducers:{
         state.contacts = state.contacts.filter(contact=>contact.id !==action.payload.id)
         },
         filterContact(state, action){
+                
                 state.filter = action.payload;
         },
 })
