@@ -7,8 +7,10 @@ initialState:{
         filter: '',
 },
 reducers:{
-        addContact(state, action){
-                state.contacts.push(action.payload)},
+        addContact:{
+                reducer(state, action){
+                state.contacts.push(action.payload)
+        },
         prepare(name, number) {
                 return{
                 payload:{
@@ -18,12 +20,11 @@ reducers:{
         },};},},
 
         removeContact(state, action){
-        state.contacts = state.contacts.filter(contact=>contact.id !==action.payload.id)
+        state.contacts = state.contacts.filter(contact=>contact.id !== action.payload)
         },
         filterContact(state, action){
-                
-                state.filter = action.payload;
-        },
+            state.filter = action.payload;
+        },},
 })
 
 

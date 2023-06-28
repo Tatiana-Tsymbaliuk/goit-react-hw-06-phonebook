@@ -1,31 +1,30 @@
 
 import React from 'react';
-import { nanoid } from 'nanoid'
 import ContactForm from 'components/FormPhonebook/ContactForm'
 import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
-import {useSelector} from 'react-redux';
-import { useDispatch } from 'react-redux';
-import {addContact} from './redux/taskSlice'
+// import {useSelector} from 'react-redux';
+// import { useDispatch } from 'react-redux';
+// import {addContact} from './redux/taskSlice'
 
 export default function App(){
   //const parsedContacts = JSON.parse(localStorage.getItem("contacts"));
   // const [contacts, setContacts] = useState(parsedContacts)
-  const {contacts} = useSelector(state => state.phonebook);
-  const dispatch = useDispatch();
+  // const {contacts} = useSelector(state => state.phonebook);
+  // const dispatch = useDispatch();
 
-const handleSubmit = data => {
-  const newContacts ={
-    id: nanoid(), 
-    ...data 
-  }
+// const handleSubmit = data => {
+//   const newContacts ={
+//     id: nanoid(), 
+//     ...data 
+//   }
   
-    const someContact = contacts.some(item=> item.name.toLowerCase() === data.name.toLowerCase())
-      if (!someContact) {
-        dispatch(addContact(newContacts));      
-      } else{
-      alert(`Name is already in contacts`);  }   
-      }
+//     const someContact = contacts.some(item=> item.name.toLowerCase() === data.name.toLowerCase())
+//       if (!someContact) {
+//         dispatch(addContact(newContacts));      
+//       } else{
+//       alert(`Name is already in contacts`);  }   
+//       }
 
     // const changeFilter =(e)=>{
     //   setFilter(e.currentTarget.value)
@@ -48,7 +47,7 @@ const handleSubmit = data => {
     // const visibleContacts = getVisibleContacts()
     return (<div>
       <h1>Phonebook</h1>
-      <ContactForm onSubmitForm={handleSubmit}/>
+      <ContactForm />
       <h2>Contacts</h2> 
       <Filter />
       <ContactList />

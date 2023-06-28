@@ -11,24 +11,28 @@ const dispatch = useDispatch();
 
 const getVisibleContacts=()=>{   
   const normalizedFilter = filter.toLowerCase();
-  return contacts.filter((contact) => contact.name.toLowerCase().includes(normalizedFilter));
+  return contacts.filter(contact =>
+    contact.name.toLowerCase().includes(normalizedFilter)
+  );
   }
 
 const visibleContacts = getVisibleContacts()
 return (<ul>
-      {visibleContacts ?
-      visibleContacts.map(({id, name, number}) => (
-        <li key ={id} 
-        className='listData'> {name} - {number}
+      {visibleContacts ? visibleContacts.map(({id, name, number}) => (
+        <li key={id} className='listData'>
+          {' '} 
+        {name} - {number}
          <button className = 'listBtn' 
         onClick={()=>dispatch(removeContact(id))}>Удалить
-        </button></li>))
-      :contacts.map(({id, name, number}) => (
-        <li key ={id} 
-        className='listData'> {name} - {number}
+        </button>
+        </li>)) : contacts.map(({id, name, number}) => (
+        <li key={id} className='listData'>
+          {' '} 
+        {name} - {number}
          <button className = 'listBtn' 
         onClick={()=>dispatch(removeContact(id))}>Удалить
-        </button></li>
+        </button>
+        </li>
       ))}
       </ul>)
 }
