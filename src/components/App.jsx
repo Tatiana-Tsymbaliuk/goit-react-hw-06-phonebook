@@ -3,9 +3,8 @@ import React from 'react';
 import ContactForm from 'components/FormPhonebook/ContactForm'
 import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
-// import {useSelector} from 'react-redux';
-// import { useDispatch } from 'react-redux';
-// import {addContact} from './redux/taskSlice'
+
+
 
 export default function App(){
   //const parsedContacts = JSON.parse(localStorage.getItem("contacts"));
